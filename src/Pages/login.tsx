@@ -1,5 +1,5 @@
 import React from 'react';
-import Form_Login from '../component/Form_Login';
+import FormLogin from '../component/Form_Login';
 import review from '../imgs/ads/reviews.png';
 import order from '../imgs/ads/order.png';
 import secorder from '../imgs/ads/secorder.png';
@@ -7,7 +7,7 @@ import secorder from '../imgs/ads/secorder.png';
 function Login() {
   return (
     <div className="flex h-[100vh]">
-      <Form_Login />
+      <FormLogin />
       <div className="bg-[#697BFF] w-[55%] lg:w-[50%] md:hidden">
         <div className="flex items-center justify-center mt-16">
           {' '}

@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from '../imgs/logo.jpg';
 
-function Form_Login() {
+function FormLogin() {
   return (
     <div className="w-[45%] lg:w-[50%] md:w-full ">
       <img className="h-[100px] w-[100px] mx-36 mt-4 xl:mx-24 lg:mx-12 md:mx-4" src={logo} alt="logo" />
@@ -55,7 +55,7 @@ function Form_Login() {
               <p className="text-[#545563] text-[14px] ">
                 Don’t have an account?{' '}
               </p>
-              <a className="text-[#4E60FF] " href="#">
+              <a className="text-[#4E60FF] " href="www.google.com">
                 Sign up
               </a>
             </div>
@@ -66,4 +66,4 @@ function Form_Login() {
   );
 }
 
-export default Form_Login;
+export default FormLogin;
