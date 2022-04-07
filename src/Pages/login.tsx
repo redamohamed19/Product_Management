@@ -19,6 +19,19 @@ function Login() {
           src={order}
           alt="order preview second"
         />
+        <h1 className="text-[32px] leading-10 font-bold text-white flex items-center justify-center mt-8 ">
+          Leave reviews for all meals
+        </h1>
+        <p className="text-[14px] leading-5  text-white flex items-center mt-4 ml-32 ">
+          Lorem ipsum dolor sit amet, magna scaevola his ei. Cum te paulo
+          probatus molestiae, eirmod assentior eum ne, et omnis antiopam mel.
+        </p>
+        <div className="flex gap-4  justify-center  mt-8">
+          <span className="h-[15px] w-[15px] bg-[#fff] roun justify-center rounded-[50%] opacity-70 "></span>
+          <span className="h-[15px] w-[15px] bg-[#fff] rounded-[50%] opacity-70"></span>
+          <span className="h-[15px] w-[15px] bg-[#fff] rounded-[50%] "></span>
+          <span className="h-[15px] w-[15px] bg-[#fff] rounded-[50%] opacity-70"></span>
+        </div>
       </div>
     </div>
   );
