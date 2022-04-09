@@ -4,10 +4,10 @@ import logo from '../imgs/logo.jpg';
 function FormLogin() {
   return (
     <div className="w-[45%] lg:w-[50%] md:w-full ">
-      <img className="h-[100px] w-[100px] mx-36 mt-4 xl:mx-24 lg:mx-12 md:mx-4" src={logo} alt="logo" />
-      <div className="mx-48 mt-24 3xl:mx-44 2xl:mx-36 xl:mx-24 lg:mx-8 lg:mt-12 md:ml-[15%]" >
+      <img className="h-[100px] w-[100px] mx-36 mt-4 xl:mx-24 lg:mx-12 md:mx-4 md:mt-2" src={logo} alt="logo" />
+      <div className="mx-48 mt-24 3xl:mx-44 2xl:mx-36 xl:mx-24 lg:mx-8 lg:mt-12 md:ml-[15%] md:mt-6" >
         {' '}
-        <h1 className="text-6xl leading-[60px] font-bold py-4 md:px-4">Login</h1>
+        <h1 className="text-6xl leading-[60px] font-bold py-4 ">Login</h1>
         <p className="text-[14px] leading-[20px] text-[#545563] py-4">
           Sign in with your data that you entered during your registration.
         </p>
@@ -17,7 +17,7 @@ function FormLogin() {
             <label className="text-[12px] ">Email</label>
             <br />
             <input
-              className="border-2 rounded-md h-[44px] p-2  rounded w-[90%]"
+              className="border-2 rounded-md h-[44px] p-2   w-[90%]"
               type="email"
               placeholder="name@example.com"
             ></input>
@@ -28,8 +28,8 @@ function FormLogin() {
             <label className="text-[12px] ">Password</label>
             <br />
             <input
-              className="border-2 rounded-md h-[44px] p-2 rounded w-[90%] "
-              type="email"
+              className="border-2 rounded-md h-[44px] p-2  w-[90%] "
+              type="password"
               placeholder="min. 8 characters"
             ></input>
           </div>
