@@ -44,8 +44,8 @@ function Navbar() {
     
 }
     </ul></div>
-    <div className='avatar col-start-8 col-end-9' onClick={()=>{setActive(false)}}><img className="rounded-2xl h-12 w-12
-    "  src={avatar} alt="avatar"/> </div>
+    <div className='avatar col-start-8 sm:h-[45px] sm:w-[45px]  ' onClick={()=>{setActive(false)}}>
+        <img className="rounded-2xl h-12 w-12 sm:h-[45px] sm:w-[45px] "  src={avatar} alt="avatar" /> </div>
     </div>
   );
 }

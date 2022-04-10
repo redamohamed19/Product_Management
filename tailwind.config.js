@@ -3,7 +3,7 @@ module.exports = {
   theme: { screens: {
       '3xl': { max: '1535px' },
       // => @media (max-width: 1535px) { ... },
-      '2xl': { max: '1400px' },
+      '2xl': { max: '1440px' },
       // => @media (max-width: 1535px) { ... }
 
       xl: { max: '1279px' },
@@ -12,12 +12,13 @@ module.exports = {
       lg: { max: '1023px' },
       // => @media (max-width: 1023px) { ... }
 
-      md: { max: '767px' },
-      // => @media (max-width: 767px) { ... }
+  
 
-      sm: { max: '639px' },
+      sm: { max: '740px' },
       // => @media (max-width: 639px) { ... }
-      ssm: { max: '450px' }
+      ssm: { max: '500px' },
+      // => @media (max-width: 450px) { ... }
+           sssm: { max: '450px' }
       // => @media (max-width: 450px) { ... }
     },
     extend: {}

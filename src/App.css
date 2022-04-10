@@ -32,6 +32,7 @@ background-color: #f1f1f1;;}
   .close_navbar {
     animation: closenavbar 1s 1;
     right: -200px;
+    display: none;
   }
   .open_navbar {
     animation: opennavbar 1s 1;
@@ -42,17 +43,21 @@ background-color: #f1f1f1;;}
 @keyframes opennavbar {
   from {
     transform: translate(450px);
+    display: none;
   }
   to {
     transform: translate(-0);
+    display: block;
   }
 }
 
 @keyframes closenavbar {
   from {
     transform: translate(-0);
+ 
   }
   to {
     right: -450px;
+  
   }
 }
