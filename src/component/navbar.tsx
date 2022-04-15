@@ -13,7 +13,7 @@ const navbarList=["Restaurants","Deals","My orders"];
 
 
 function Navbar() {
-    const navbar=useRef("null")
+    const navbar:any=useRef("null")
      const [isActive, setActive] = useState(true);
 
     
