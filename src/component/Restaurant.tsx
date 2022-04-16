@@ -19,7 +19,7 @@ export interface Weather {
 
   const Restaurant = (props: any) => {
     console.log(props)
-      return(<div className="border-2 rounded-lg border-[#EDEEF2] ">
+      return(<div className="border-2 rounded-lg border-[#EDEEF2]  ">
           <div className="relative"><img className=' rounded-2xl ' src={props.Data.image} alt=""/>
           {props.Data.fetured && (<p className='tag_featured'>Featured</p>)}
           </div>

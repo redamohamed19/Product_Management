@@ -20,7 +20,7 @@ function Navbar() {
   return (
     <div className=' relative px-32  py-4 grid grid-cols-8 items-center lg:px-4 sm:gap-2 sm:pr-8 '>
 <div className="col-start-1 col-end-2 justify-self-center sm:col-end-3 sm:justify-self-start " ><img className='h-[100px] w-[100px]  sm:h-[80px] sm:w-[80px]' src={logo} alt="logo"/></div>
-<form className='w-[205px] h-10 rounded-xl bg-[#EDEEF2] flex items-center col-start-2 col-end-3 sm:hidden'><input  className='bg-transparent pl-5 ' type="text" placeholder='Search '/><button><img src={search} alt="search"/> </button>  </form>
+<form className='w-[245px] h-10 rounded-xl bg-[#EDEEF2] flex items-center col-start-2 col-end-3 sm:hidden'><input  className='bg-transparent pl-5 ' type="text" placeholder='Search '/><button><img  className="w-5 max-w-none"  src={search} alt="search"/> </button>  </form>
 <ul className='flex gap-6  px-8  col-start-5 col-end-7 justify-self-end lg:col-start-4 sm:hidden'>
     {navbarList.map(Element=>{
         return (<li className='text-[14px] font-bold'> {Element} </li>)
