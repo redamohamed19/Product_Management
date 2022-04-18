@@ -64,7 +64,7 @@ function Home() {
     )
   })}
 </ul>
-<h1 className="text-xl font-semibold leading-7 px-48 xl:px-24 ssm:px-12 text-[#2B2B43] py-8 ">Nearby restaurants</h1>
+<h1 className="text-xl font-semibold leading-7 px-48 xl:px-24 ssm:px-12  text-[#2B2B43] py-8 ">Nearby restaurants</h1>
 <div className='flex px-48 flex-wrap gap-x-24 gap-y-4 justify-around xl:px-24 ssm:px-12  '>{Restaurants.map((Element,Index)=>{return(<Restaurant Data={Element}  />)})}</div>
     </div>
   );
