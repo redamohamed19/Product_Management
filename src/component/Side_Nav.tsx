@@ -9,10 +9,10 @@ const Setting_List=[{h2:"Account",h5:"Personal information",image:User},{h2:"Add
 
 function Side_Nav() {
   return (
-    <div className="w-2/6 ">
+    <div className="w-2/6 sm:w-full">
         <h1 className=' text-xl leading-7 font-semibold  text-[#2B2B43] spacing  tracking-widest '>Settings</h1>
 {Setting_List.map((Element)=>{
-    return (        <div className='flex rounded-xl border-[#EDEEF2] border-[1px] w-4/5 my-4 py-3 px-1 items-center gap-4'  >
+    return (        <div className='flex rounded-xl border-[#EDEEF2] border-[1px] w-4/5 my-4 py-3 px-1 items-center gap-4 sm:w-full'  >
 <div className='bg-[#EDEEF2] rounded-xl w-10 h-10 flex justify-center items-center'>
 <img className=' hover:fill-black' src={Element.image} alt="user" />
 
