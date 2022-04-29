@@ -26,6 +26,9 @@ function Sign_Up() {
       default:
     }
   };
+  const handleClick=(direction:any)=>{
+
+  }
   return (
     <div className="flex h-[100vh]">
    
@@ -61,7 +64,7 @@ function Sign_Up() {
         </div>
 
      
-        <Stepper_controlers/> 
+        <Stepper_controlers handleClick={handleClick} steps={steps}  currentStep={currentStep}/> 
       </div>
     </div>
     </div>
