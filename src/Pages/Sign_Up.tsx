@@ -27,7 +27,9 @@ function Sign_Up() {
     }
   };
   const handleClick=(direction:any)=>{
-
+    let NewStep=currentStep;
+    direction==="next"? NewStep++:NewStep--;
+    NewStep>0 && NewStep<=steps.length && setCurrentStep(NewStep)
   }
   return (
     <div className="flex h-[100vh]">

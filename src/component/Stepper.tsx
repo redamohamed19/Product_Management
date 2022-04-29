@@ -77,7 +77,7 @@ return(
 
   {}
     <div className={"relative flex flex-col items-center  "}>
-        <div className={` rounded-full transition duration-500 ease-in-out h-12 w-12 flex items-center justify-center py-3 border-gray-300 border-2 ${step.selected ? "bg-[#697bff] border-[#697bff] text-white" : ""}`}>{step.completed ? (<span className='text-white font-bold text-xl'>&#10003;</span>):index+1}</div>
+        <div className={` rounded-full transition duration-500 ease-in-out h-12 w-12 flex items-center justify-center py-3 border-gray-300 border-2 ${step.completed ? "bg-[#697bff] border-[#697bff] text-white" : ""}`}>{step.completed ? (<span className='text-white font-bold text-xl'>&#10003;</span>):index+1}</div>
         <div className={`absolute top-0 text-center mt-16 w-32 text-base font-medium uppercase ${step.selected ? "text-gray-900" : "text-gray-400"}`}>{step.Description}</div>
     </div>
     {index !==newStep.length-1 && <div className={`flex-auto w-20 border-t-2 trasition duration-500 ease-in-out ${step.completed ? "bg-[#697bff] border-[#697bff]" : ""}`}></div>
