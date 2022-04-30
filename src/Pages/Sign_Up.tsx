@@ -1,15 +1,17 @@
 import React,{useState} from 'react';
-
+import { Steppercontext } from '../Context/stepper_Context';
 import review from '../imgs/ads/reviews.png';
 import order from '../imgs/ads/order.png';
 import secorder from '../imgs/ads/secorder.png';
 import Stepper from '../component/Stepper';
-import Stepper_controlers from '../component/Stepper_controlers';
-import Phone_number from '../component/signin_steps/Phone_number';
-import User_info from '../component/signin_steps/user_info';
+import Steppercontrolers from '../component/Stepper_controlers';
+import Phonenumber from '../component/signin_steps/Phone_number';
+import Userinfo from '../component/signin_steps/user_info';
 
 function Sign_Up() {
   const [currentStep, setCurrentStep] = useState(1);
+  const[userData,SetuserData]=useState("")
+  const [finalData,SetFinalData]=useState([]);
   const steps = [
     "Account Information",
     "Personal Details",
@@ -19,9 +21,9 @@ function Sign_Up() {
   const displayStep = (step:Number) => {
     switch (step) {
       case 1:
-        return <Phone_number/>;
+        return <Phonenumber/>;
       case 2:
-        return <User_info />;
+        return <Userinfo />;
 
       default:
     }
@@ -60,13 +62,16 @@ function Sign_Up() {
         </div>
       </div>
       <div className='bg-white  w-1/2'>
-      <div className=' shadow-xl rounded-2xl  mx-auto w-4/5'>
-        <div className=" ">
+      <div className='my-24 shadow-xl rounded-2xl  mx-auto w-4/5 pb-6'>
+        <div className="">
         <Stepper steps={steps}  currentStep={currentStep} />
+        <Steppercontext.Provider value={{userData,SetuserData,finalData,SetFinalData}}>
+          {displayStep(currentStep)}
+        </Steppercontext.Provider>
         </div>
 
      
-        <Stepper_controlers handleClick={handleClick} steps={steps}  currentStep={currentStep}/> 
+        <Steppercontrolers handleClick={handleClick} steps={steps}  currentStep={currentStep}/> 
       </div>
     </div>
     </div>
