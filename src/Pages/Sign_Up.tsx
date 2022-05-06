@@ -6,15 +6,16 @@ import secorder from '../imgs/ads/secorder.png';
 import Stepper from '../component/Stepper';
 import Steppercontrolers from '../component/Stepper_controlers';
 import Phonenumber from '../component/signin_steps/Phone_number';
-import Userinfo from '../component/signin_steps/user_info';
+import PasswordEntry from '../component/signin_steps/PasswordEntry';
 
 function Sign_Up() {
   const [currentStep, setCurrentStep] = useState(1);
   const[userData,SetuserData]=useState("")
   const [finalData,SetFinalData]=useState([]);
+  const[GoNext,SetGoNext]=useState(true)
   const steps = [
     "Account Information",
-    "Personal Details",
+    "Password Entry",
     "Payment",
     "Complete",
   ];
@@ -23,7 +24,7 @@ function Sign_Up() {
       case 1:
         return <Phonenumber/>;
       case 2:
-        return <Userinfo />;
+        return <PasswordEntry GoNext={GoNext}  SetGoNext={SetGoNext}  />;
 
       default:
     }
@@ -71,7 +72,7 @@ function Sign_Up() {
         </div>
 
      
-        <Steppercontrolers handleClick={handleClick} steps={steps}  currentStep={currentStep}/> 
+        <Steppercontrolers handleClick={handleClick} steps={steps}  currentStep={currentStep} GoNext={GoNext}  /> 
       </div>
     </div>
     </div>
