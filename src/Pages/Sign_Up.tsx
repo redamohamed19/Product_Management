@@ -8,6 +8,7 @@ import Steppercontrolers from '../component/Stepper_controlers';
 import Phonenumber from '../component/signin_steps/Phone_number';
 import PasswordEntry from '../component/signin_steps/PasswordEntry';
 import EmailVerification from '../component/signin_steps/EmailVerification';
+import AccontCreated from '../component/signin_steps/AccontCreated';
 
 function Sign_Up() {
   const [currentStep, setCurrentStep] = useState(1);
@@ -28,6 +29,8 @@ function Sign_Up() {
         return <PasswordEntry GoNext={GoNext}  SetGoNext={SetGoNext}  />;
         case 3:
           return  <EmailVerification/>;
+          case 4:
+            return  <AccontCreated/>;
 
       default:
     }
