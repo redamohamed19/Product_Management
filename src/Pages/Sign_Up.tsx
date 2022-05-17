@@ -1,5 +1,5 @@
 import React,{useState} from 'react';
-import { Steppercontext } from '../Context/stepper_Context';
+import Globalcontext  from '../Context/StepperContext';
 import review from '../imgs/ads/reviews.png';
 import order from '../imgs/ads/order.png';
 import secorder from '../imgs/ads/secorder.png';
@@ -12,9 +12,10 @@ import AccontCreated from '../component/signin_steps/AccontCreated';
 
 function Sign_Up() {
   const [currentStep, setCurrentStep] = useState(1);
-  const[userData,SetuserData]=useState("")
-  const [finalData,SetFinalData]=useState([]);
+  
   const[GoNext,SetGoNext]=useState(true)
+  const [Status, Setstatus] = useState({ FirstName: '', SecondName: '',Email: '', PhoneNumber: '',Password: ''})
+  const FinalStatus={...Status,Setstatus:Setstatus}
   const steps = [
     "Account Information",
     "Password Entry",
@@ -72,9 +73,10 @@ function Sign_Up() {
       <div className='my-24 shadow-xl rounded-2xl  mx-auto w-4/5 pb-6'>
         <div className="">
         <Stepper steps={steps}  currentStep={currentStep} />
-        <Steppercontext.Provider value={{userData,SetuserData,finalData,SetFinalData}}>
+        <Globalcontext.Provider value={FinalStatus}>
           {displayStep(currentStep)}
-        </Steppercontext.Provider>
+          </Globalcontext.Provider>
+    
         </div>
 
      
