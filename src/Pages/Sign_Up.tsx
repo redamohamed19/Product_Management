@@ -73,7 +73,7 @@ function Sign_Up() {
       <div className='my-24 shadow-xl rounded-2xl  mx-auto w-4/5 pb-6'>
         <div className="">
         <Stepper steps={steps}  currentStep={currentStep} />
-        <Globalcontext.Provider value={FinalStatus}>
+        <Globalcontext.Provider value={{Status,Setstatus}}>
           {displayStep(currentStep)}
           </Globalcontext.Provider>
     
