@@ -6,9 +6,9 @@ var cors = require('cors')
 
 
 
-const mongoString = process.env.DATABASE_URL;
+const mongoString = process.env.ATLAS_URI;
 
-mongoose.connect("mongodb+srv://Reda1998:root@cluster0.g2hls.mongodb.net/test");
+mongoose.connect(mongoString);
 const database = mongoose.connection;
 
 database.on('error', (error) => {
