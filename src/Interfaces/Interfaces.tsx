@@ -17,3 +17,13 @@ export interface IPasswordEntry {
     SetGoNext:any
   
   }
+
+  export interface IStepperController {
+    GoNext: boolean,
+    handleClick(direction:any):void,
+    currentStep: number;
+    steps:String[],
+  
+  
+  }
+  

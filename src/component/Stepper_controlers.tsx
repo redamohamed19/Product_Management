@@ -1,20 +1,29 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import axios from 'axios';
+import {IStepperController,IuserInfo} from "../Interfaces/Interfaces"
 
-export interface IStepperController {
-  GoNext: boolean,
-  handleClick(direction:any):void,
-  currentStep: number;
-  steps:String[],
+import Globalcontext from '../Context/StepperContext';
+import User_info from './signin_steps/PasswordEntry';
 
-
-}
 
 
 
 function Stepper_controlers(props:IStepperController) {
+  const USerInfo:IuserInfo = useContext(Globalcontext);
+
+
+  const element=USerInfo.Status
   const SubmitNewUser=()=>{
-    if(props.currentStep===props.steps.length){
-      
+ 
+    
+    if(props.currentStep===props.steps.length-2){
+    
+      const url="http://localhost:8000/api/post";
+      axios.post(url, element)
+      .then(function (response) {
+        console.log(response);
+      })
+
     }
   }
   return (

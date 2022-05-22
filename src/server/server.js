@@ -1,8 +1,11 @@
-require('dotenv').config();
-
 const routes = require('./routes/routes');
 const express = require('express');
 const mongoose = require('mongoose');
+require('dotenv').config();
+var cors = require('cors')
+
+
+
 const mongoString = process.env.DATABASE_URL;
 
 mongoose.connect("mongodb+srv://Reda1998:root@cluster0.g2hls.mongodb.net/test");
@@ -16,7 +19,7 @@ database.once('connected', () => {
     console.log('Database Connected');
 })
 const app = express();
-
+app.use(cors())
 app.use(express.json());
 app.use('/api', routes)
 

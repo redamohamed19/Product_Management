@@ -71,16 +71,19 @@ function Sign_Up() {
       </div>
       <div className='bg-white  w-1/2'>
       <div className='my-24 shadow-xl rounded-2xl  mx-auto w-4/5 pb-6'>
+      <Globalcontext.Provider value={{Status,Setstatus}}>
         <div className="">
+         
         <Stepper steps={steps}  currentStep={currentStep} />
-        <Globalcontext.Provider value={{Status,Setstatus}}>
+       
           {displayStep(currentStep)}
-          </Globalcontext.Provider>
+         
     
         </div>
 
      
         <Steppercontrolers handleClick={handleClick} steps={steps}  currentStep={currentStep} GoNext={GoNext}  /> 
+        </Globalcontext.Provider>
       </div>
     </div>
     </div>
