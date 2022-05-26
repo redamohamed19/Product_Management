@@ -5,11 +5,12 @@ import Home from './Pages/home';
 import Settings from './Pages/Settings';
 import './App.css';
 import Sign_Up from './Pages/Sign_Up';
+import Marketing from './Pages/Marketing';
 
 function App() {
   return (
     <div>
-     <Home/>
+     <Marketing/>
     </div>
   );
 }
