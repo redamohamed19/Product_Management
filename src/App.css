@@ -3,6 +3,12 @@
 @tailwind utilities;
 
 @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+
+
+
+
+
 * {
   padding: 0;
   margin: 0;
@@ -31,7 +37,26 @@ font-size: 12px;
 padding: 5px 20px 5px 20px;;
 font-weight: bold;
 }
+.Banner{
+  position: absolute;
+left: 0;
+top: -20px;
+width: 370px;
+}
+.plat:nth-child(1){
+transform: rotate(60deg) translate(-150px);
+}
+.plat:nth-child(2){
+  transform: rotate(120deg) translate(-190px);
+  }
 
+  .plat:nth-child(3){
+    transform: rotate(180deg) translate(-150px);
+    }
+    .plat:nth-child(4){
+      transform: rotate(360deg) translate(-110px);
+      }
+    
 @media (max-width: 739px) { 
   .res_nav{display: block;
     padding: 150px 10px 150px 10px;
@@ -73,3 +98,4 @@ background-color: #f1f1f1;;}
   
   }
 }
+

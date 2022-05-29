@@ -19,7 +19,7 @@ function Navbar() {
     <div className=' relative px-32  py-4 grid grid-cols-8 items-center lg:px-4 sm:gap-2 sm:pr-8 '>
 <div className="col-start-1 col-end-2 justify-self-center sm:col-end-3 sm:justify-self-start " ><img className='h-[100px] w-[100px]  sm:h-[80px] sm:w-[80px]' src={logo} alt="logo"/></div>
 
-<ul className='flex gap-6  px-8  col-start-4 col-end-7 justify-self-end lg:col-start-4 sm:hidden'>
+<ul className='flex gap-6  px-8  col-start-4 col-end-7 2xl:col-end-8 justify-self-end lg:col-start-4 sm:hidden'>
     {navbarList.map(Element=>{
         return (<li className='text-[14px] font-bold'> {Element} </li>)
     })  
@@ -38,8 +38,15 @@ function Navbar() {
     
 }
     </ul></div>
-    <div className='col-start-7 justify-self-end'> <button className='bg-[#4E60FF] text-white rounded-xl px-4 py-2 font-semibold outline-none'>Sign In</button> </div>
-
+    <div className='col-start-7 justify-self-end  2xl:col-start-8 sm:hidden'> <button className='bg-[#4E60FF] text-white rounded-xl px-4 py-2 font-semibold outline-none'>Sign In</button> </div>
+ <div className='humburger col-start-8 hidden sm:block '>
+ <label className=''>
+      <input type="checkbox" id="check"/> 
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+ </div>
     </div>
   );
 }
