@@ -8,15 +8,15 @@
 label{
     display:flex;
      flex-direction:column;
-     width:50px;
+     width:30px;
      cursor:pointer;
    }
    
    label span{
-     background: #4C23E8;
+     background: #4E60FF;
      border-radius:10px;
      height:5px;
-     margin: 5px 0;
+     margin: 3px 0;
      transition: .4s  cubic-bezier(0.68, -0.6, 0.32, 1.6);
    
    }
@@ -60,7 +60,7 @@ label{
      
      transform-origin:bottom;
      width:50%;
-     transform: translate(22px,-9px) rotatez(45deg);
+     transform: translate(15px,-7px) rotatez(45deg);
    
    }
    
