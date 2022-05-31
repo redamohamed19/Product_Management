@@ -1,5 +1,5 @@
 import { createContext } from "react";
 
-const Globalcontext: any = createContext({ FirstName: '', SecondName: '',Email: '', PhoneNumber: '',Password: '' });
+const Globalcontext: any = createContext({});
 
 export default Globalcontext;

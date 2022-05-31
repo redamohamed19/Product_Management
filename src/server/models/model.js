@@ -1,36 +1,42 @@
 const mongoose=require("mongoose")
 
-const user=new mongoose.Schema({
- 
-    FirstName:{
-        type:String,
-        required:true,
-      
-    },
-    SecondName:{
-        type:String,
-        required:true,
-      
-    },
-    Email:{
-        type:String,
-        required:true,
-        unique:true
-      
-    },
-    PhoneNumber:{
-        type:String,
-        required:true,
-        unique:true
-      
-    },
-    Password:{
-        type:String,
-        required:true,
-      
-    },
+
+  
+var AttributeValue = new mongoose.Schema({
+    Name     : String,
+    Boolean  : Boolean,
+    Date : Date,
+   
+},{timestamps:true});
+
+var AssignedAttribute = new mongoose.Schema({
+    AttributeValue:  [{ type: mongoose.Schema.Types.ObjectId, ref: 'AttributeValue' }],
+});
 
 
-},{timestamps:true})
+var Attribute = new mongoose.Schema({
+    Name: String,
+    Type: [mongoose.Schema.Types.Mixed],
+    AttributeValue: [{ type: mongoose.Schema.Types.ObjectId, ref: 'AttributeValue' }]
+});
 
-module.exports = mongoose.model('UserData', user)
+var ProductType = new mongoose.Schema({
+    Name: String,
+    Attribute: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Attribute' }]
+});
+
+var Product = new mongoose.Schema({
+    Name: String,
+    productType: [{ type: mongoose.Schema.Types.ObjectId, ref: 'productType' }],
+    AssignedAttributes: [{ type: mongoose.Schema.Types.ObjectId, ref: 'AssignedAttributes' }]
+});
+
+
+
+var AttributeValueM  = mongoose.model('AttributeValue', AttributeValue);
+var AssignedAttributeM = mongoose.model('AssignedAttribute', AssignedAttribute);
+var AttributeM  = mongoose.model('Attribute', Attribute);
+var ProductTypeM = mongoose.model('ProductType', ProductType);
+var ProductM = mongoose.model('Product', Product);
+module.exports = mongoose.model('ProductType', ProductType);
+module.exports = mongoose.model('Product', Product);

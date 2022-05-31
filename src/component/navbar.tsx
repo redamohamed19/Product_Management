@@ -1,20 +1,26 @@
 import React from 'react';
 import logo from '../imgs/logo.jpg';
 import search from "../imgs/icons/search.svg"
-import bags from "../imgs/icons/shopping bag.svg"
+import add from "../imgs/icons/add.png"
 import avatar from "../imgs/avatar.png"
 import close from "../imgs/icons/close.png"
+import {INavbar} from "../Interfaces/Interfaces"
 import {useRef,useState} from "react"
 
 
 
-const navbarList=["Restaurants","Deals","My orders"];
+const navbarList=["Main","Product","Client"];
 
 
 
-function Navbar() {
+function Navbar(props:INavbar) {
     const navbar:any=useRef("null")
      const [isActive, setActive] = useState(true);
+     const addproduct=useRef(null);
+
+     const AddProductFunc=()=>{
+         props.SetModalV(true)
+     }
 
     
   return (
@@ -28,9 +34,9 @@ function Navbar() {
     
 }
     </ul>
-    <div className="rounded-2xl bg-[#F3F4FF] p-2 relative  col-start-7 col-end-8 justify-self-center w-fit sm:col-start-6">
-        <img className='h-[25px] w-[25px] m-1' src={bags} alt='notifications'/>
-        <span className="absolute right-0 top-0 h-5 w-5 rounded-lg bg-[#4E60FF] text-white font-bold text-center text-[12px]  ">4</span>
+    <div ref={addproduct} onClick={AddProductFunc} className="flex items-center gap-1 px-4 rounded-2xl bg-[#5457ac] p-1 relative  col-start-7 col-end-8 justify-self-center w-fit sm:col-start-6 text-white font-bold">
+        Add Product<img className='h-[25px] w-[25px] m-1' src={add} alt='notifications'/>
+       
 
     </div>
     <div className={isActive ? "res_nav close_navbar" : "res_nav open_navbar"}  ref={navbar}> 

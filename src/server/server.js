@@ -1,4 +1,5 @@
-const routes = require('./routes/routes');
+const proucttyperoute = require('./routes/proucttyperoute');
+const Productrouter = require('./routes/productRoute')
 const express = require('express');
 const mongoose = require('mongoose');
 require('dotenv').config();
@@ -21,7 +22,9 @@ database.once('connected', () => {
 const app = express();
 app.use(cors())
 app.use(express.json());
-app.use('/api', routes)
+app.use('/product', Productrouter)
+app.use('/producttype', proucttyperoute)
+
 
 app.listen(8000, () => {
     console.log(`Server Started at ${8000}`)
