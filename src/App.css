@@ -39,22 +39,23 @@ font-weight: bold;
 }
 .Banner{
   position: absolute;
-left: 0;
-top: -20px;
+
+top: 80px;
 width: 370px;
 }
+
 .plat:nth-child(1){
-transform: rotate(60deg) translate(-150px);
+transform: rotate(60deg) translate(-90px,60px);
 }
 .plat:nth-child(2){
-  transform: rotate(120deg) translate(-190px);
+  transform: rotate(120deg) translate(-150px,-80px);
   }
 
   .plat:nth-child(3){
-    transform: rotate(180deg) translate(-150px);
+    transform: rotate(180deg) translate(-200px,-50px);
     }
     .plat:nth-child(4){
-      transform: rotate(360deg) translate(-110px);
+      transform: rotate(360deg) translate(-100px,-10px);
       }
     
 @media (max-width: 739px) { 
