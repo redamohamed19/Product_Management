@@ -2,7 +2,8 @@
 
 export interface INavbar {
 
-  SetModalV:any
+  SetModalV:any,
+  xdata:any
   
   }
 

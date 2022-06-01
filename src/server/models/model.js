@@ -20,10 +20,7 @@ var Attribute = new mongoose.Schema({
     AttributeValue: [{ type: mongoose.Schema.Types.ObjectId, ref: 'AttributeValue' }]
 });
 
-var ProductType = new mongoose.Schema({
-    Name: String,
-    Attribute: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Attribute' }]
-});
+
 
 var Product = new mongoose.Schema({
     Name: String,
@@ -36,7 +33,7 @@ var Product = new mongoose.Schema({
 var AttributeValueM  = mongoose.model('AttributeValue', AttributeValue);
 var AssignedAttributeM = mongoose.model('AssignedAttribute', AssignedAttribute);
 var AttributeM  = mongoose.model('Attribute', Attribute);
-var ProductTypeM = mongoose.model('ProductType', ProductType);
-var ProductM = mongoose.model('Product', Product);
-module.exports = mongoose.model('ProductType', ProductType);
+
+
 module.exports = mongoose.model('Product', Product);
+module.exports = mongoose.model('Attribute', Attribute);

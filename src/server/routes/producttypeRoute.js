@@ -1,17 +1,22 @@
 const express = require('express');
 const { default: mongoose } = require('mongoose');
-const ProductType = require('../models/model');
+
 
 const router = express.Router()
 
 module.exports = router;
+var ProductType = new mongoose.Schema({
+    Name: String,
+    Attribute: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Attribute' }]
+});
+var ProductTypeM = mongoose.model('ProductType', ProductType);
 
 //Post Method
 
 router.post('/post', async (req, res) => {
-    const data = new ProductType({
-        Name: "test",
-        Attribute:['629663a96db18c20d81d011d']
+    const data = new ProductTypeM({
+        Name:  req.body.Name,
+        Attribute:[ req.body.Attribute]
     })
 
     try {
@@ -22,5 +27,4 @@ router.post('/post', async (req, res) => {
         res.status(400).json({message: error.message})
     }
 })
-
 

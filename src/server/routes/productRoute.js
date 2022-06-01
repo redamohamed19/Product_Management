@@ -1,5 +1,5 @@
 const express = require('express');
-const Product = require('../models/model');
+const ProductM = require('../models/model');
 
 const Productrouter = express.Router()
 
@@ -8,7 +8,7 @@ module.exports = Productrouter;
 //Post Method
 
 Productrouter.post('/post', async (req, res) => {
-    const data = new Product({
+    const data = new ProductM({
         Name: "Tara",
         productType:['6296695f7fd6e007b5cacee3'],
         AssignedAttributes:['62966aca6db18c20d81d011f']
