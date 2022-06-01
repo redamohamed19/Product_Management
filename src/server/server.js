@@ -1,6 +1,8 @@
 const proucttyperoute = require('./routes/producttypeRoute');
 const Productrouter = require('./routes/productRoute')
 const AttributeRouter = require('./routes/AttributeRouter')
+const assignedAttributeRouter = require('./routes/assignedattributesroute')
+
 const express = require('express');
 const mongoose = require('mongoose');
 require('dotenv').config();
@@ -26,6 +28,7 @@ app.use(express.json());
 app.use('/product', Productrouter)
 app.use('/producttype', proucttyperoute)
 app.use('/Attribute', cors(),AttributeRouter)
+app.use('/assigned', cors(),assignedAttributeRouter)
 
 
 app.listen(8000, () => {

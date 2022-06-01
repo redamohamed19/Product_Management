@@ -28,3 +28,15 @@ router.post('/post', async (req, res) => {
     }
 })
 
+
+//Get all Method
+router.get('/getAll', async (req, res) => {
+    try{
+        const data = await ProductTypeM.find();
+        res.json(data)
+    }
+    catch(error){
+        res.status(500).json({message: error.message})
+    }
+})
+

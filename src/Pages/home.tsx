@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Navbar from  "../component/navbar";
+import ProductList from  "../component/ProductList";
 import Navbar2 from  "../component/navbar2";
 
 import Form from "../component/form"
@@ -25,6 +25,7 @@ function Home() {
 					>
 				<Form/>
 					</Modal>
+					<ProductList/>
 
     </div>
   );

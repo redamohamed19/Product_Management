@@ -9,9 +9,7 @@ var AttributeValue = new mongoose.Schema({
    
 },{timestamps:true});
 
-var AssignedAttribute = new mongoose.Schema({
-    AttributeValue:  [{ type: mongoose.Schema.Types.ObjectId, ref: 'AttributeValue' }],
-});
+
 
 
 var Attribute = new mongoose.Schema({
@@ -31,9 +29,8 @@ var Product = new mongoose.Schema({
 
 
 var AttributeValueM  = mongoose.model('AttributeValue', AttributeValue);
-var AssignedAttributeM = mongoose.model('AssignedAttribute', AssignedAttribute);
-var AttributeM  = mongoose.model('Attribute', Attribute);
 
+var AttributeM  = mongoose.model('Attribute', Attribute);
 
 module.exports = mongoose.model('Product', Product);
 module.exports = mongoose.model('Attribute', Attribute);
