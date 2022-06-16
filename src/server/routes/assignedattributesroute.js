@@ -2,7 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 
 var AssignedAttribute = new mongoose.Schema({
-    AttributeValue:  [{ type: mongoose.Schema.Types.ObjectId, ref: 'AttributeValue' }],
+    AttributeValue:  { type: mongoose.Schema.Types.ObjectId, ref: 'AttributeValue' },
 });
 
 var AssignedAttributeM = mongoose.model('AssignedAttribute', AssignedAttribute);

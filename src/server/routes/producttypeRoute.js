@@ -7,8 +7,9 @@ const router = express.Router()
 module.exports = router;
 var ProductType = new mongoose.Schema({
     Name: String,
+    Type:String,
     Attribute: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Attribute' }]
-});
+},{timestamps:true});
 var ProductTypeM = mongoose.model('ProductType', ProductType);
 
 //Post Method

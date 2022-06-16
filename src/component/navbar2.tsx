@@ -4,14 +4,15 @@ import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
 import React from 'react'
 import {INavbar} from "../Interfaces/Interfaces"
+import logo from "../imgs/icons/logo3.png"
 
 import add from "../imgs/icons/add.png"
 
 const navigation = [
-  { name: 'Dashboard', href: '#', current: true },
-  { name: 'Team', href: '#', current: false },
-  { name: 'Projects', href: '#', current: false },
-  { name: 'Calendar', href: '#', current: false },
+  { name: 'Product', href: '#', current: true },
+  { name: 'Section', href: '#', current: false },
+  { name: 'Promotion', href: '#', current: false },
+  { name: 'Collections', href: '#', current: false },
 ]
 
 function classNames(...classes:any) {
@@ -49,12 +50,12 @@ export default function Example(props:INavbar) {
                 <div className="flex-shrink-0 flex items-center">
                   <img
                     className="block lg:hidden h-8 w-auto"
-                    src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg"
+                    src={logo}
                     alt="Workflow"
                   />
                   <img
                     className="hidden lg:block h-8 w-auto"
-                    src="https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg"
+                    src={logo}
                     alt="Workflow"
                   />
                 </div>
@@ -76,8 +77,8 @@ export default function Example(props:INavbar) {
                   </div>
                 </div>
               </div>
-              <div ref={addproduct} onClick={AddProductFunc} className="flex items-center gap-1 px-4 rounded-2xl bg-[#5457ac] p-1 relative  col-start-7 col-end-8 justify-self-center w-fit sm:col-start-6 text-white font-bold">
-        Add Product<img className='h-[25px] w-[25px] m-1' src={add} alt='notifications'/>
+              <div ref={addproduct} onClick={AddProductFunc} className="flex mr-24 sm:mr-0 items-center gap-1 px-4 rounded-2xl bg-[#5457ac] p-1 relative  col-start-7 col-end-8 justify-self-center w-fit sm:col-start-6 text-white font-bold">
+        <span className='hidden sm:block'>Add Product</span><img className='h-[25px] w-[25px] m-1' src={add} alt='notifications'/>
        
 
     </div>
