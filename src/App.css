@@ -84,7 +84,9 @@ transform: rotate(60deg) translate(-90px,60px);
     .plat:nth-child(4){
       transform: rotate(360deg) translate(-100px,-10px);
       }
-    
+      .checked {
+        color: orange;
+      }
 @media (max-width: 739px) { 
   .res_nav{display: block;
     padding: 150px 10px 150px 10px;

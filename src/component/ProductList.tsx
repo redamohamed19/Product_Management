@@ -1,41 +1,9 @@
 import React, { useEffect, useState } from "react"
-import Updateform from "../component/updateform"
-import Modal from "./Modal"
+
 import update from "../imgs/icons/update.png"
 import axios from "axios";
 
 
-const products = [
-    {
-      id: 1,
-      name: 'Basic Tee',
-      href: '#',
-      imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg',
-      imageAlt: "Front of men's Basic Tee in black.",
-      price: '$35',
-      color: 'Black',
-    },
-    {
-        id: 2,
-        name: 'Basic Tee',
-        href: '#',
-        imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-02.jpg',
-        imageAlt: "Front of men's Basic Tee in black.",
-        price: '$25',
-        color: 'Silver',
-      },
-          {
-        id: 3,
-        name: 'Basic Tee',
-        href: '#',
-        imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-03.jpg',
-        imageAlt: "Front of men's Basic Tee in black.",
-        price: '$25',
-        color: 'Silver',
-      },
-    // More products...
-  ]
-  
   export default function Example() {
     const [ModalV, SetModalV] = useState(false);
     const [ProductArray, setProductArray] :any= useState([]);
@@ -52,18 +20,21 @@ const products = [
       GetTypeproduct();
 
     }, []);
-      console.log(ProductArray)
+    const Stars:any=(star:number)=>{
+      const commit=[]
+      for (let i = 0; i < 5; i++) {
+       console.log("hi" +i)
+       commit.push(      <span className={`fa fa-star ${star>i ? "checked" : ""}`}></span> )
+
+        
+            
+      }
+      return commit
+    }
+    
     return (
       <div className="bg-white">
-        <Modal      
-            title=''
-						visible={ModalV}
-						onClose={() => {
-							SetModalV(false);
-						}}
-					>
-				<Updateform/>
-					</Modal>
+
         <div className="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
           <h2 className="text-2xl font-extrabold tracking-tight text-gray-900">Customers also purchased</h2>
   
@@ -90,6 +61,13 @@ const products = [
                   </div>
                   <p className="text-sm font-medium text-gray-900">{product.Price}</p>
                 </div>
+                <div className="rating">
+                {
+                  Stars(product.Rate)
+                } 
+
+
+				</div>
               </div>
             ))}
           </div>

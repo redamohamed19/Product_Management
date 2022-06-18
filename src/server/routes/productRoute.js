@@ -13,8 +13,10 @@ Productrouter.post('/post', async (req, res) => {
         Imagesrc:req.body.Imagesrc,
         Price:req.body.Price,
         productType:req.body.productType,
-        Color:req.body.Color
-     
+        Color:req.body.Color,
+        Rate:1,
+        Sales:0
+        
     })
 
     try {
