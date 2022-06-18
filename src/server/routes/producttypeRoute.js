@@ -8,7 +8,7 @@ module.exports = router;
 var ProductType = new mongoose.Schema({
     Name: String,
     Type:String,
-    Attribute: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Attribute' }]
+  
 },{timestamps:true});
 var ProductTypeM = mongoose.model('ProductType', ProductType);
 
@@ -17,7 +17,7 @@ var ProductTypeM = mongoose.model('ProductType', ProductType);
 router.post('/post', async (req, res) => {
     const data = new ProductTypeM({
         Name:  req.body.Name,
-        Attribute:[ req.body.Attribute]
+       
     })
 
     try {

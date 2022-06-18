@@ -1,7 +1,10 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import Updateform from "../component/updateform"
 import Modal from "./Modal"
 import update from "../imgs/icons/update.png"
+import axios from "axios";
+
+
 const products = [
     {
       id: 1,
@@ -13,7 +16,7 @@ const products = [
       color: 'Black',
     },
     {
-        id: 1,
+        id: 2,
         name: 'Basic Tee',
         href: '#',
         imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-02.jpg',
@@ -22,7 +25,7 @@ const products = [
         color: 'Silver',
       },
           {
-        id: 1,
+        id: 3,
         name: 'Basic Tee',
         href: '#',
         imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-03.jpg',
@@ -35,6 +38,21 @@ const products = [
   
   export default function Example() {
     const [ModalV, SetModalV] = useState(false);
+    const [ProductArray, setProductArray] :any= useState([]);
+
+    useEffect(() => {
+            
+ 
+      const GetTypeproduct = async () => {
+          await axios.get('http://localhost:8000/product/getAll')
+          .then(
+            response => setProductArray(response.data))
+        }
+   
+      GetTypeproduct();
+
+    }, []);
+      console.log(ProductArray)
     return (
       <div className="bg-white">
         <Modal      
@@ -50,13 +68,13 @@ const products = [
           <h2 className="text-2xl font-extrabold tracking-tight text-gray-900">Customers also purchased</h2>
   
           <div className="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-            {products.map((product) => (
-              <div key={product.id} className="group relative" onClick={()=>{SetModalV(true)}}>
+            {ProductArray.map((product:any) => (
+              <div key={product._id} className="group relative" onClick={()=>{SetModalV(true)}}>
                 <button className=" absolute right-0 t-0 "  ><img className="w-10" src={update} alt="update" /> </button>
                 <div className="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
                   <img
-                    src={product.imageSrc}
-                    alt={product.imageAlt}
+                    src={product.Imagesrc}
+                    alt={product.Name}
                     className="w-full h-full object-center object-cover lg:w-full lg:h-full"
                   />
                 </div>
@@ -65,12 +83,12 @@ const products = [
                     <h3 className="text-sm text-gray-700">
                       <a href={product.href}>
                         <span aria-hidden="true" className="absolute inset-0" />
-                        {product.name}
+                        {product.Name}
                       </a>
                     </h3>
-                    <p className="mt-1 text-sm text-gray-500">{product.color}</p>
+                    <p className="mt-1 text-sm text-gray-500">{product.Color}</p>
                   </div>
-                  <p className="text-sm font-medium text-gray-900">{product.price}</p>
+                  <p className="text-sm font-medium text-gray-900">{product.Price}</p>
                 </div>
               </div>
             ))}

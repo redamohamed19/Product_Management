@@ -9,9 +9,12 @@ module.exports = Productrouter;
 
 Productrouter.post('/post', async (req, res) => {
     const data = new ProductM({
-        Name: "Tara",
-        productType:['6296695f7fd6e007b5cacee3'],
-        AssignedAttributes:['62966aca6db18c20d81d011f']
+        Name: req.body.Name,
+        Imagesrc:req.body.Imagesrc,
+        Price:req.body.Price,
+        productType:req.body.productType,
+        Color:req.body.Color
+     
     })
 
     try {
@@ -20,6 +23,17 @@ Productrouter.post('/post', async (req, res) => {
     }
     catch (error) {
         res.status(400).json({message: error.message})
+    }
+})
+
+//Get all Method
+Productrouter.get('/getAll', async (req, res) => {
+    try{
+        const data = await ProductM.find();
+        res.json(data)
+    }
+    catch(error){
+        res.status(500).json({message: error.message})
     }
 })
 
